@@ -90,8 +90,19 @@
                     font-size: 14px;    /* Setzt die Schriftgröße */
                 }
                 header {
-                    flex-direction: column; /* Ordnet die Flexbox-Elemente vertikal an */
-                    align-items: center;    /* Zentriert die Elemente horizontal */
+                flex-direction: column;            /* Ordnet die Flexbox-Elemente vertikal an */
+                align-items: flex-start;           /* Richtet die Elemente am Anfang des Containers aus */
+            }    
+                nav {
+                    display: flex;                   /* Verwendet Flexbox für das Layout */
+                    flex-direction: column;          /* Ordnet die Navigationslinks vertikal an */
+                    width: 100%;                     /* Setzt die Breite des Containers auf 100% */
+                }
+                
+                nav a {
+                    margin: 5px 0;                   /* Fügt vertikalen Außenabstand hinzu */
+                    width: 100%;                     /* Setzt die Breite der Links auf 100% */
+                    text-align: center;              /* Zentriert den Text */
                 }
                 .header-content {
                     text-align: center; /* Zentriert den Text */
