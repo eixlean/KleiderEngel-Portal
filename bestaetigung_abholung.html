@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Definiert den Dokumenttyp und die Sprache als Deutsch -->
+<head>
+    <meta charset="UTF-8"> <!-- Stellt die Zeichenkodierung auf UTF-8 ein -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ermöglicht responsives Design -->
+    <title>Spendenbestätigung</title> <!-- Setzt den Titel der Webseite -->
+    <style>
+         body {
+                font-family: Arial, sans-serif; /* Setzt die Schriftart auf Arial oder eine ähnliche serifenlose Schrift */
+                background-color: #f4f4f4;  /* Setzt die Hintergrundfarbe auf ein helles Grau */
+                margin: 0;                          /* Entfernt den Standardaußenabstand */
+                padding: 0;                     /* Entfernt den Standardinnenabstand */
+                display: flex;                         /* Verwendet Flexbox für das Layout */
+            flex-direction: column;                /* Ordnet die Flexbox-Elemente vertikal an */
+            min-height: 100vh;                     /* Setzt die Mindesthöhe auf die volle Höhe des Viewports */
+            }
+        header {
+            background-color: #17c7f3;           /* Setzt die Hintergrundfarbe des Headers auf ein helles Blau */
+            color: white;                        /* Setzt die Textfarbe auf Weiß */
+            padding: 1em;                          /* Fügt Innenabstand hinzu */
+            text-align: center;                    /* Zentriert den Text */
+            display: flex;                         /* Verwendet Flexbox für das Layout */
+            align-items: center;                   /* Zentriert die Elemente vertikal */
+            justify-content: space-between;        /* Verteilt die Elemente gleichmäßig */
+            flex-wrap: wrap;                       /* Ermöglicht das Umfließen der Elemente */
+            }
+        .logo {
+                max-width: 100px;                      /* Setzt die maximale Breite des Logos */
+                height: auto;                          /* Passt die Höhe automatisch an */
+            }
+        .header-content {
+                flex: 1;                               /* Lässt das Element den verfügbaren Platz einnehmen */
+                text-align: center;                    /* Zentriert den Text */
+            }
+        nav {
+                margin-top: 10px;                      /* Fügt einen oberen Außenabstand hinzu */
+            }
+        nav a {                                    /* Konfiguration der Navigationsleiste */
+                color: white;                          /* Setzt die Textfarbe auf Weiß */
+                text-decoration: none;                 /* Entfernt die Unterstreichung */
+                margin: 0 10px;                        /* Fügt horizontalen Außenabstand hinzu */
+                padding: 10px 20px;                    /* Fügt Innenabstand hinzu */
+                background-color: #17c7f3;             /* Setzt die Hintergrundfarbe auf ein helles Blau */
+                border-radius: 5px;                    /* Rundet die Ecken ab */
+            }
+        nav a:hover {
+                background-color: #4705fd;             /* Setzt die Hintergrundfarbe beim Hover-Effekt auf ein dunkles Blau */
+            }
+        main {
+            padding: 2em;           /* Fügt Innenabstand hinzu */
+            max-width: 80%;       /* Setzt die maximale Breite */
+            margin: auto;           /* Zentriert das Element horizontal */
+            flex: 1;                     /* Lässt das Element den verfügbaren Platz einnehmen */
+        }
+        .confirmation {
+            background-color: white;                      /* Hintergrundfarbe */
+            padding: 80px;                                  /* Innenabstand */
+            border-radius: 50px;                            /* Abgerundete Ecken */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);      /* Schatteneffekt */
+            text-align: left;                               /* Textausrichtung */
+        }
+        .button {
+                display: inline-block;                 /* Zeigt das Element als Inline-Block an */
+                padding: 15px 30px;                    /* Fügt Innenabstand hinzu */
+                margin: 10px 0;                        /* Fügt vertikalen Außenabstand hinzu */
+                background-color: #17c7f3;           /* Setzt die Hintergrundfarbe auf ein helles Blau */
+                color: white;                        /* Setzt die Textfarbe auf Weiß */
+                text-decoration: none;                 /* Entfernt die Unterstreichung */
+                border-radius: 5px;                    /* Rundet die Ecken ab */
+                font-size: 16px;                        /* Schriftgröße */
+                border: 2px solid black;            /* Fügt einen schwarzen Rand hinzu */
+            }
+        .button:hover {
+                background-color: #4705fd;           /* Setzt die Hintergrundfarbe beim Hover-Effekt auf ein dunkles Blau */
+            }
+
+        .button-right {
+                float: right;                           /* Der Button ist rechtsbündig */
+            }
+
+        footer {
+                text-align: center;                    /* Zentriert den Text */
+                padding: 1em 0;                        /* Fügt vertikalen Innenabstand hinzu */
+                background-color: #333;              /* Setzt die Hintergrundfarbe auf ein dunkles Grau */
+                color: white;                        /* Setzt die Textfarbe auf Weiß */
+            }
+        @media (max-width: 600px) {
+            header {
+                        flex-direction: column;            /* Ordnet die Flexbox-Elemente vertikal an */
+                        align-items: center;               /* Zentriert die Elemente horizontal */
+                    }
+            .header-content {
+                        text-align: center;                /* Zentriert den Text */
+                        margin-top: 10px;                  /* Fügt einen oberen Außenabstand hinzu */
+                    }
+            main {
+                        padding: 1em;                      /* Reduziert den Innenabstand */
+                    }
+            .button {
+                        padding: 10px;                     /* Reduziert den Innenabstand */
+                        font-size: 14px;                   /* Setzt die Schriftgröße */
+                    }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Fügt ein Logo-Bild hinzu -->
+        <div class="header-content">
+            <h1>Willkommen beim KleiderEngel-Portal</h1> <!-- Überschrift im Header -->
+            <nav>
+                <a href="index.html">Startseite</a> <!-- Link zur Startseite -->
+                <a href="abholung.html">Abholung</a> <!-- Link zur Abholseite -->
+                <a href="vorort.html">Übergabe an der Geschäftsstelle</a> <!-- Link zur Übergabeseite -->
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="confirmation">
+            <h2>Vielen Dank für Ihre Spende!</h2> <!-- Unterüberschrift im Hauptbereich -->
+            <p>Hier sind die Details Ihrer Spende:</p>
+            <p><strong>Name:</strong> <span id="name"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Abholadresse:</strong> <span id="strasse"></span> <span id="hausnummer"></span>, <span id="postleitzahl"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Art der Kleidung:</strong> <span id="kleidung"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Krisengebiet:</strong> <span id="krisengebiet"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Datum:</strong> <span id="datum"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Uhrzeit:</strong> <span id="uhrzeit"></span></p> <!-- Wiedergabe Inhalte -->
+            <p><strong>Ort:</strong> Online - zur Abholung</p> <!-- Wiedergabe Inhalte -->
+            <a href="index.html" class="button button-right">Zurück zur Startseite</a> <!-- Beenden Button - zur Startseite -->
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 KleiderEngel-Portal. Alle Rechte vorbehalten.</p> <!-- Fußzeile mit Copyright-Hinweis -->
+    </footer>
+    <script>
+        // Daten aus der URL abrufen
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const strasse = urlParams.get('strasse');
+        const hausnummer = urlParams.get('hausnummer');
+        const postleitzahl = urlParams.get('postleitzahl');
+        const kleidung = urlParams.get('kleidung');
+        const krisengebiet = urlParams.get('krisengebiet');
+        const datum = new Date().toLocaleDateString();
+        const uhrzeit = new Date().toLocaleTimeString();
+
+        // Daten in die Bestätigungsseite einfügen
+        document.getElementById('name').textContent = name;
+        document.getElementById('strasse').textContent = strasse;
+        document.getElementById('hausnummer').textContent = hausnummer;
+        document.getElementById('postleitzahl').textContent = postleitzahl;
+        document.getElementById('kleidung').textContent = kleidung;
+        document.getElementById('krisengebiet').textContent = krisengebiet;
+        document.getElementById('datum').textContent = datum;
+        document.getElementById('uhrzeit').textContent = uhrzeit;
+    </script>
+</body>
+</html>

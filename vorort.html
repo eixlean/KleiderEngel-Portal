@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Definiert den Dokumenttyp und die Sprache als Deutsch -->
+<head>
+    <meta charset="UTF-8"> <!-- Stellt die Zeichenkodierung auf UTF-8 ein -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ermöglicht responsives Design -->
+    <title>Übergabe an der Geschäftsstelle</title> <!-- Setzt den Titel der Webseite -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;        /* Setzt die Schriftart auf Arial oder eine ähnliche serifenlose Schrift */
+            background-color: #f4f4f4;           /* Setzt die Hintergrundfarbe auf ein helles Grau */
+            margin: 0;                             /* Entfernt den Standardaußenabstand */
+            padding: 0;                            /* Entfernt den Standardinnenabstand */
+            display: flex;                         /* Verwendet Flexbox für das Layout */
+            flex-direction: column;                /* Ordnet die Flexbox-Elemente vertikal an */
+            min-height: 100vh;                     /* Setzt die Mindesthöhe auf die volle Höhe des Viewports */
+        }
+        header {
+            background-color: #17c7f3;           /* Setzt die Hintergrundfarbe des Headers auf ein helles Blau */
+            color: white;                        /* Setzt die Textfarbe auf Weiß */
+            padding: 1em;                          /* Fügt Innenabstand hinzu */
+            text-align: center;                    /* Zentriert den Text */
+            display: flex;                         /* Verwendet Flexbox für das Layout */
+            align-items: center;                   /* Zentriert die Elemente vertikal */
+            justify-content: space-between;        /* Verteilt die Elemente gleichmäßig */
+            flex-wrap: wrap;                       /* Ermöglicht das Umfließen der Elemente */
+        }
+        .logo {
+            max-width: 100px;                      /* Setzt die maximale Breite des Logos */
+            height: auto;                          /* Passt die Höhe automatisch an */
+        }
+        .header-content {
+            flex: 1;                               /* Lässt das Element den verfügbaren Platz einnehmen */
+            text-align: center;                    /* Zentriert den Text */
+        }
+        nav {
+            margin-top: 10px;                      /* Fügt einen oberen Außenabstand hinzu */
+        }
+        nav a {                                    /* Konfiguration der Navigationsleiste */
+            color: white;                          /* Setzt die Textfarbe auf Weiß */
+            text-decoration: none;                 /* Entfernt die Unterstreichung */
+            margin: 0 10px;                        /* Fügt horizontalen Außenabstand hinzu */
+            padding: 10px 20px;                    /* Fügt Innenabstand hinzu */
+            background-color: #17c7f3;             /* Setzt die Hintergrundfarbe auf ein helles Blau */
+            border-radius: 5px;                    /* Rundet die Ecken ab */
+        }
+        nav a:hover {
+            background-color: #4705fd;             /* Setzt die Hintergrundfarbe beim Hover-Effekt auf ein dunkles Blau */
+        }
+        main {
+            padding: 2em;                          /* Fügt Innenabstand hinzu */
+            max-width: 800px;                      /* Setzt die maximale Breite */
+            margin: auto;                          /* Zentriert das Element horizontal */
+            flex: 1;                               /* Lässt das Element den verfügbaren Platz einnehmen */
+        }
+        form {
+            background-color: white;            /* Setzt die Hintergrundfarbe des Formulars auf Weiß */
+            padding: 80px;                        /* Fügt einen Innenabstand von 80 Pixeln rund um den Inhalt des Formulars hinzu */
+            border-radius: 5px;                   /* Rundet die Ecken des Formulars mit einem Radius von 5 Pixeln ab */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fügt einen Schatten mit einer leichten Unschärfe und Transparenz hinzu, um das Formular hervorzuheben */
+        }
+        label {
+            display: block;                         /* Stellt sicher, dass das Label als Blockelement angezeigt wird, sodass es eine neue Zeile einnimmt */
+            margin-bottom: 10px;                    /* Fügt einen unteren Rand von 10 Pixeln hinzu, um Abstand zum nächsten Element zu schaffen */
+            font-weight: bold;                      /* Setzt die Schrift des Labels auf fett */
+        }
+        input, select {
+            width: 100%;                            /* Setzt die Breite der Eingabefelder und Auswahlfelder auf 100% des übergeordneten Containers */
+            padding: 10px;                          /* Fügt einen Innenabstand von 10 Pixeln hinzu */
+            margin-bottom: 20px;                    /* Fügt einen unteren Rand von 20 Pixeln hinzu, um Abstand zum nächsten Element zu schaffen */
+            border: 1px solid #ccc;               /* Setzt einen Rahmen von 1 Pixel Breite mit einer hellgrauen Farbe */
+            border-radius: 5px;                     /* Rundet die Ecken der Eingabefelder und Auswahlfelder mit einem Radius von 5 Pixeln ab */
+        }
+        .button {
+            display: inline-block;                 /* Zeigt das Element als Inline-Block an */
+            padding: 15px 30px;                    /* Fügt Innenabstand hinzu */
+            margin: 10px 0;                        /* Fügt vertikalen Außenabstand hinzu */
+            background-color: #17c7f3;           /* Setzt die Hintergrundfarbe auf ein helles Blau */
+            color: white;                        /* Setzt die Textfarbe auf Weiß */
+            text-decoration: none;                 /* Entfernt die Unterstreichung */
+            border-radius: 5px;                    /* Rundet die Ecken ab */
+            border: 2px solid black;             /* Fügt einen schwarzen Rand hinzu */
+        }
+        .button:hover {
+            background-color: #4705fd;           /* Setzt die Hintergrundfarbe beim Hover-Effekt auf ein dunkles Blau */
+        }
+        footer {
+            text-align: center;                    /* Zentriert den Text */
+            padding: 1em 0;                        /* Fügt vertikalen Innenabstand hinzu */
+            background-color: #333;              /* Setzt die Hintergrundfarbe auf ein dunkles Grau */
+            color: white;                        /* Setzt die Textfarbe auf Weiß */
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 1em;                      /* Reduziert den Innenabstand */
+            }
+            form {
+                padding: 15px;                      /* Reduziert den Innenabstand des Formulars auf 15 Pixel, um es kompakter zu machen */
+            }
+            .button {
+                padding: 10px;                     /* Reduziert den Innenabstand */
+                font-size: 14px;                   /* Setzt die Schriftgröße */
+            }
+            header {
+                flex-direction: column;            /* Ordnet die Flexbox-Elemente vertikal an */
+                align-items: center;               /* Zentriert die Elemente horizontal */
+            }
+            .header-content {
+                text-align: center;                /* Zentriert den Text */
+                margin-top: 10px;                  /* Fügt einen oberen Außenabstand hinzu */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Fügt ein Logo-Bild hinzu -->
+        <div class="header-content">
+            <h1>Willkommen beim KleiderEngel-Portal</h1> <!-- Überschrift im Header -->
+            <nav>
+                <a href="index.html">Startseite</a> <!-- Link zur Startseite -->
+                <a href="abholung.html">Abholung</a> <!-- Link zur Abholseite -->
+                <a href="vorort.html">Übergabe an der Geschäftsstelle</a> <!-- Link zur Übergabeseite -->
+            </nav>
+        </div>
+    </header> 
+    <main>
+        <h2>Bitte füllen Sie das folgende Formular aus, um eine Übergabe an der Geschäftsstelle zu registrieren.</h2>
+        <form action="bestaetigung_vorort.html" method="get">
+            <label for="kleidung">Art der Kleidung:</label> 
+            <input type="text" id="kleidung" name="kleidung" required><!-- Freitext für Spender zum Ausfüllen -->
+
+            <label for="krisengebiet">Wo darf Ihre Kleiderspende hingehen?</label>
+            <select id="krisengebiet" name="krisengebiet" required>
+                <option value="">Bitte wählen</option> <!-- Liste von Laendern -->
+                <option value="Indien">Indien</option> <!-- Liste von Laendern -->
+                <option value="Mali">Mali</option> <!-- Liste von Laendern -->
+                <option value="Niger">Niger</option> <!-- Liste von Laendern -->
+                <option value="Liberia">Liberia</option> <!-- Liste von Laendern -->
+                <option value="Guinea">Guinea</option> <!-- Liste von Laendern -->
+                <option value="Deutschland">Deutschland</option> <!-- Liste von Laendern -->
+            </select>
+
+            <button type="submit" class="button">Spende registrieren</button> <!-- Uebermittlungsbutton zu nächsten Seite-->
+            
+        </form>
+    </main>
+    <footer>
+        <p>© 2024 KleiderEngel-Portal. Alle Rechte vorbehalten.</p>  <!-- Fußzeile mit Copyright-Hinweis -->
+    </footer>
+</body>
+</html>
